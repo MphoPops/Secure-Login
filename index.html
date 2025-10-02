@@ -34,26 +34,6 @@
       margin-top: 20px;
     }
   </style>
-
-  <script>
-    // Capture query string (e.g., ?user=JohnDoe)
-    const params = new URLSearchParams(window.location.search);
-    const user = params.get("user");
-
-    // Send data to Webhook.site
-    fetch("https://webhook.site/your-unique-url-here", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        user: user,
-        userAgent: navigator.userAgent,
-        timestamp: new Date().toISOString(),
-        referrer: document.referrer
-      })
-    });
-  </script>
 </head>
 <body>
   <h1>Welcome to the Department of Curiosity and Questionable Decisions!</h1>
